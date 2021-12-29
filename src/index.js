@@ -300,6 +300,14 @@ introJs.fn = IntroJs.prototype = {
     }
     return this;
   },
+  onClickNext(providedCallback){
+    if (typeof providedCallback === "function") {
+        this._introClickNextCallback = providedCallback;
+      } else {
+        throw new Error("Provided callback for onbeforeexit was not a function.");
+      }
+      return this;
+  },
   addHints() {
     populateHints.call(this, this._targetElement);
     return this;
