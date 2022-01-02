@@ -1,6 +1,6 @@
 {
-  "name": "intro.js",
-  "version": "4.3.0",
+  "name": "@sre-portal/intro.js",
+  "version": "4.3.1",
   "description": "Lightweight, user-friendly onboarding tour library",
   "keywords": [
     "onboarding",
@@ -68,7 +68,6 @@
   "files": [
     "*.js",
     "*.css",
-    "themes/*",
     "minified/*"
   ],
   "license": "AGPL-3.0",

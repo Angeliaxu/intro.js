@@ -374,8 +374,8 @@ export default function _showElement(targetElement) {
 
     nextTooltipButton.onclick = () => {
       if (self._introItems.length - 1 !== self._currentStep) {
-        if(typeof self._introClickNextCallback === "function") {
-            self._introClickNextCallback.call(self, self._currentStep, "next");
+        if (typeof self._introClickNextCallback === "function") {
+          self._introClickNextCallback.call(self, self._currentStep, "next");
         }
         nextStep.call(self);
       } else if (/introjs-donebutton/gi.test(nextTooltipButton.className)) {
