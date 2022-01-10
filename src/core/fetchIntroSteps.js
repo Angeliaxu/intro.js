@@ -2,6 +2,23 @@ import forEach from "../util/forEach";
 import cloneObject from "../util/cloneObject";
 import createElement from "../util/createElement";
 
+const filterSteps = (step) => {
+  let newStep = step.filter((item) => {
+    // 过滤掉已经看过，不再向用户展示引导
+    if (!localStorage.getItem(item.point)) {
+      return item;
+    }
+  });
+  newStep = newStep.filter((item) => {
+    // 过滤掉不在可视区范围之类的，不向用户展示引导
+    const ele = document.querySelector < HTMLElement > item.element;
+    if (ele && ele.style.display !== "none") {
+      return item;
+    }
+  });
+  return newStep;
+};
+
 /**
  * Finds all Intro steps from the data-* attributes and the options.steps array
  *
@@ -173,7 +190,7 @@ export default function fetchIntroSteps(targetElm) {
     }
   }
 
-  introItems = tempIntroItems;
+  introItems = filterSteps(tempIntroItems);
 
   //Ok, sort all items with given steps
   introItems.sort((a, b) => a.step - b.step);
