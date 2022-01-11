@@ -329,7 +329,7 @@ export default function _showElement(targetElement) {
     const buttonsLayer = createElement("div");
 
     setStyle(helperLayer, {
-      "box-shadow": `0 0 1px 2px rgba(33, 33, 33, 0.8), rgba(33, 33, 33, ${self._options.overlayOpacity.toString()}) 0 0 0 5000px`,
+      "box-shadow": `0 0 1px 2px rgba(0, 0, 0, 0%), rgba(0, 0, 0, ${self._options.overlayOpacity.toString()}) 0 0 0 5000px`,
     });
 
     // target is within a scrollable element

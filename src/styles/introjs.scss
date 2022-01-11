@@ -10,6 +10,7 @@ $white: #ffffff;
 $primaryColor:#327DFF;
 $secondaryColor:#898A8C;
 $colorBase:#F5F7FA;
+$back0:#575859;
 
 $font_family: "Helvetica Neue", Inter, ui-sans-serif, "Apple Color Emoji",
   Helvetica, Arial, sans-serif;
@@ -58,6 +59,17 @@ tr.introjs-showElement {
   z-index: 9999998;
   border-radius: 4px;
   transition: all 0.3s ease-out;
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    border: 1px dashed $white;
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    top: -7px;
+    left: -6px;
+}
 
   * {
     box-sizing: content-box;
@@ -192,8 +204,8 @@ tr.introjs-showElement {
 
 .introjs-tooltip-header {
   padding-left: 20px;
-  padding-right: 20px;
   padding-top: 10px;
+  margin-bottom: 10px;
 
   &:after {
     content: ".";
@@ -231,36 +243,13 @@ tr.introjs-showElement {
   white-space: nowrap;
   cursor: pointer;
   outline: none;
-  background-color: $black100;
-  border-radius: 2px;
+  background-color:$primaryColor;
+  border-radius: 4px;
   box-shadow: 0;
   zoom: 1;
   *display: inline;
-
-  &:hover {
-    background-color:$primaryColor ;
-    color:  $white;
-  }
-
-  &:focus {
-    outline: none;
-    text-decoration: none;
-    background-color: $black200;
-    border: 1px solid $black600;
-    color: $black900;
-  }
-
-  &:active {
-    outline: none;
-    text-decoration: none;
-    background-color: $black300;
-    border-color: $black500;
-    color: $black900;
-  }
-
-  &::-moz-focus-inner {
-    padding: 0;
-    border: 0;
+  &:hover{
+      color:$white;
   }
 }
 
@@ -268,23 +257,20 @@ tr.introjs-showElement {
   box-sizing: content-box;
   color: $black600;
   float: right;
-  font-size: 20px;
+  font-size: 14px;
   cursor: pointer;
-  font-weight: bold;
   line-height: 1;
   text-align: center;
   padding: 7px 10px;
+  color:$secondaryColor;
 
-  &:hover,
-  &:focus {
-    color: $black900;
-    outline: none;
-    text-decoration: none;
-  }
 }
 
 .introjs-prevbutton {
   float: left;
+  background: $white;
+  color: $back0;
+  border:1px solid #d5d6d9;
 }
 
 .introjs-nextbutton {
@@ -299,17 +285,6 @@ tr.introjs-showElement {
   background-color: $black100;
   background-image: none;
   text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: $black500;
-    border-color: $black400;
-    box-shadow: none;
-    cursor: default;
-    background-color: $black100;
-    background-image: none;
-    text-decoration: none;
-  }
 }
 
 .introjs-hidden {
