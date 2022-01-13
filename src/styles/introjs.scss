@@ -271,6 +271,9 @@ tr.introjs-showElement {
   background: $white;
   color: $back0;
   border:1px solid #d5d6d9;
+  &:hover {
+      color: $back0;
+  }
 }
 
 .introjs-nextbutton {
